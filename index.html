@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tradeshabbo.com - Translator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: url("fondo.gif");
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    select, button {
+      font-size: 16px;
+      margin-bottom: 20px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+    .seccion_traducciones_automaticas{
+      width: 100%;
+    }
+    #traducciones{
+      background: black;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      width: 100%;
+      border-radius: 10px;
+      min-height: 50px;
+    }
+    #resultado{
+      display: contents;
+    }
+    .bubble {
+      margin-top: 7px;
+      margin-bottom: 7px;
+      align-self: center;
+      background: white;
+      color: black;
+      padding: 10px 15px;
+      border-radius: 10px;
+      max-width: 90%;
+      word-wrap: break-word;
+      position: relative;
+      border: 3px solid gray; /* Valor por defecto */
+      width: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>
+    <img src="trades_habbo_origins.png" alt="Trades Habbo Origins">
+  </h1>
+  <div id="ocr-status" style="display: flex; align-items: center; margin-top: 20px;">
+    <div id="status-icon" style="width: 20px; height: 20px; border-radius: 50%; background: gray; margin-right: 10px;"></div>
+    <span id="status-text">Comprobando el estado de OCR.Space...</span>
+  </div>
+  <div class="seccion_traducciones_automaticas">
+    <h2 id="titulo_leer">Leer en:</h2>
+    <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px;">
+      <select id="idioma">
+        <option value="español">Español</option>
+        <option value="inglés">Inglés</option>
+        <option value="portugués">Portugués (Brasil)</option>
+      </select>
+      <button id="iniciar">Capturar texto</button>
+    </div>
+    <!-- Ejemplo de traducciones -->
+    <div id="traducciones">
+      <div id="resultado">
+      </div>
+    </div>
+  </div>
+  <div id="traduccion-manual" style="margin-top: 30px; width: 100%;">
+    <h2 id="titulo_responder">Responder en:</h2>
+    <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px;">
+      <select id="idioma-responder">
+        <option value="español">Español</option>
+        <option value="inglés">Inglés</option>
+        <option value="portugués">Portugués (Brasil)</option>
+      </select>
+      <input 
+        id="texto-manual" 
+        type="text" 
+        placeholder="Escribe el texto aquí..." 
+        style="padding: 10px; width: calc(100% - 20px); border-radius: 5px; border: 1px solid gray;"
+      />
+      <button id="boton-traducir" style="padding: 10px; font-size: 16px; border: none; border-radius: 5px;">Responder</button>
+    </div>
+    <div id="resultado-manual" style="margin-top: 20px; width: 96%; background: black; color: white; padding: 15px; border-radius: 10px;">
+      <p style="font-size: 16px;" id="resultado-texto-manual"></p>
+    </div>
+  </div>
+  <script src="html.js">
+  </script>
+</body>
+</html>
